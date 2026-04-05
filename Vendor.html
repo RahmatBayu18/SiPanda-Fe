@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>MBG: Perizinan &amp; Pemantauan - Perizinan Vendor</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#e6e8ea",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#6ffbbe",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-primary-container": "#c4d2ff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "surface-variant": "#e0e3e5",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary-fixed-variant": "#812800",
+                        "tertiary-fixed-dim": "#ffb59b",
+                        "secondary": "#006c49",
+                        "primary-fixed-dim": "#b2c5ff",
+                        "primary-container": "#0052cc",
+                        "outline": "#737685",
+                        "on-primary-fixed": "#001848",
+                        "primary": "#003d9b",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f2f4f6",
+                        "surface": "#f7f9fb",
+                        "surface-container-highest": "#e0e3e5",
+                        "background": "#f7f9fb",
+                        "on-tertiary-fixed": "#380d00",
+                        "error": "#ba1a1a",
+                        "surface-container": "#eceef0",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#002113",
+                        "on-surface": "#191c1e",
+                        "inverse-primary": "#b2c5ff",
+                        "primary-fixed": "#dae2ff",
+                        "on-primary-fixed-variant": "#0040a2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#ffdbcf",
+                        "tertiary": "#7b2600",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary-container": "#ffc6b2",
+                        "on-surface-variant": "#434654",
+                        "outline-variant": "#c3c6d6",
+                        "secondary-fixed-dim": "#4edea3",
+                        "secondary-container": "#6cf8bb",
+                        "on-background": "#191c1e",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#a33500",
+                        "surface-tint": "#0c56d0",
+                        "on-secondary-container": "#00714d",
+                        "inverse-surface": "#2d3133"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-headline {
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .custom-glass {
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface">
+    <!-- Sidebar Navigation -->
+    <aside
+        class="h-screen w-72 fixed left-0 top-0 overflow-y-auto bg-slate-50 border-r border-slate-200/10 z-50 hidden md:block">
+        <div class="flex flex-col gap-2 p-6 h-full">
+            <div class="mb-8">
+                <span class="text-xl font-black text-blue-800 tracking-tight headline">MBG Portal</span>
+                <p class="text-xs font-medium text-slate-500 font-manrope">Sistem Terintegrasi</p>
+            </div>
+            <nav class="flex-1 space-y-1">
+                <a class="flex items-center gap-3 px-4 py-3 bg-white text-blue-700 shadow-sm rounded-lg font-bold transition-transform duration-200 hover:translate-x-1"
+                    href="Dashboard.html">
+                    <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                    <span class="font-manrope text-sm tracking-tight">Dashboard</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-200/50 rounded-lg transition-transform duration-200 hover:translate-x-1"
+                    href="Vendor.html">
+                    <span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+                    <span class="font-manrope text-sm tracking-tight">Perizinan Vendor</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-200/50 rounded-lg transition-transform duration-200 hover:translate-x-1"
+                    href="Monitoring.html">
+                    <span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+                    <span class="font-manrope text-sm tracking-tight">Pemantauan</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-200/50 rounded-lg transition-transform duration-200 hover:translate-x-1"
+                    href="Report.html">
+                    <span class="material-symbols-outlined" data-icon="description">description</span>
+                    <span class="font-manrope text-sm tracking-tight">Laporan</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-200/50 rounded-lg transition-transform duration-200 hover:translate-x-1"
+                    href="#">
+                    <span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                    <span class="font-manrope text-sm tracking-tight">Analitik</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-200/50 rounded-lg transition-transform duration-200 hover:translate-x-1"
+                    href="#">
+                    <span class="material-symbols-outlined" data-icon="hub">hub</span>
+                    <span class="font-manrope text-sm tracking-tight">Log Blockchain</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-200/50 rounded-lg transition-transform duration-200 hover:translate-x-1"
+                    href="Admin.html">
+                    <span class="material-symbols-outlined" data-icon="group">group</span>
+                    <span class="font-manrope text-sm tracking-tight">Admin</span>
+                </a>
+        </div>
+    </aside>
+    <!-- Main Canvas -->
+    <main class="ml-72 min-h-screen">
+        <!-- TopAppBar Shell -->
+        <header
+            class="bg-white/70 backdrop-blur-md sticky top-0 z-40 w-full flex justify-between items-center px-8 py-3 shadow-sm shadow-blue-900/5">
+            <div class="flex items-center gap-4">
+                <h2 class="text-lg font-bold bg-gradient-to-br from-blue-700 to-blue-500 bg-clip-text text-transparent">
+                    MBG: Perizinan &amp; Pemantauan</h2>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <button class="p-2 text-slate-500 hover:bg-slate-50/50 rounded-full transition-all active:scale-95">
+                        <span class="material-symbols-outlined">notifications</span>
+                    </button>
+                    <button class="p-2 text-slate-500 hover:bg-slate-50/50 rounded-full transition-all active:scale-95">
+                        <span class="material-symbols-outlined">settings</span>
+                    </button>
+                </div>
+                <div class="flex items-center gap-3 pl-6 border-l border-outline-variant/30">
+                    <div class="text-right">
+                        <p class="text-sm font-bold text-on-surface">Administrator</p>
+                        <p class="text-[10px] text-on-surface-variant font-medium">Super Admin</p>
+                    </div>
+                    <img alt="Administrator Profile" class="w-10 h-10 rounded-full object-cover ring-2 ring-primary/10"
+                        data-alt="professional portrait of a confident male executive in a navy suit against a clean grey background"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ1ZFgAw7DdiY2nWlpk6aGRxDwflLuueALKIPILFbq8k7KB6IbHgy76Gw-cPwEJiI28G9yiW77h0VFw6c6NkGUHrVEKu6pcx40YsRfS_Sa2Zs-QZBkub-qQ1FQS773LQDrTqb3-l5XE9lA7tSrN9R5O7QkJJmnmyKiUnRv9D18mNjmbOjZxgYQSNdm_oFzcVQs5CWUjiTMjyKuO2oYhE4PdrkXFZ-vSCW5Y3rtmUbcODeNjbapEHqv7lV9wLJtv6nykfg4lKaBV0c4" />
+                </div>
+            </div>
+        </header>
+        <!-- Content Body -->
+        <div class="p-10 max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-10">
+                <div>
+                    <h3 class="text-3xl font-black text-on-surface tracking-tight mb-2">Manajemen Perizinan Vendor</h3>
+                    <p class="text-on-surface-variant max-w-xl">Pantau dan kelola status lisensi operasional untuk
+                        seluruh mitra rantai pasok MBG secara real-time.</p>
+                </div>
+                <div class="flex gap-3">
+                    <button
+                        class="flex items-center gap-2 px-5 py-2.5 bg-surface-container-lowest border border-outline-variant/20 rounded-xl text-sm font-semibold text-on-surface-variant hover:bg-surface-container-low transition-all">
+                        <span class="material-symbols-outlined text-[18px]">filter_list</span>
+                        Filter
+                    </button>
+                    <button
+                        class="flex items-center gap-2 px-5 py-2.5 bg-primary text-white rounded-xl text-sm font-bold shadow-md hover:shadow-lg transition-all active:scale-95">
+                        <span class="material-symbols-outlined text-[18px]">add</span>
+                        Tambah Vendor Baru
+                    </button>
+                </div>
+            </div>
+            <!-- Dashboard Stats Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+                <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-b-4 border-primary">
+                    <p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Total Vendor</p>
+                    <h4 class="text-3xl font-black text-on-surface">128</h4>
+                </div>
+                <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-b-4 border-secondary">
+                    <p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Disetujui</p>
+                    <h4 class="text-3xl font-black text-secondary">114</h4>
+                </div>
+                <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-b-4 border-tertiary">
+                    <p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Menunggu</p>
+                    <h4 class="text-3xl font-black text-tertiary">9</h4>
+                </div>
+                <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-b-4 border-error">
+                    <p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Ditolak</p>
+                    <h4 class="text-3xl font-black text-error">5</h4>
+                </div>
+            </div>
+            <!-- Table Container -->
+            <div
+                class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden border border-outline-variant/5">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr
+                            class="bg-surface-container-low text-on-surface-variant text-xs font-bold uppercase tracking-widest">
+                            <th class="px-6 py-4">Nama Vendor</th>
+                            <th class="px-6 py-4">Jenis Layanan</th>
+                            <th class="px-6 py-4">Wilayah</th>
+                            <th class="px-6 py-4">Status</th>
+                            <th class="px-6 py-4 text-right">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-surface-container">
+                        <tr class="hover:bg-surface-container-lowest transition-colors cursor-pointer group">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-primary">corporate_fare</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold text-on-surface">Apex Corridors Ltd</p>
+                                        <p class="text-[10px] text-on-surface-variant">ID: MBG-2024-001</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="text-sm text-on-surface">Logistik &amp; Distribusi</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="text-sm text-on-surface">Jawa Barat</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold bg-secondary-container text-on-secondary-container">
+                                    Disetujui
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 text-right">
+                                <button class="text-primary font-bold text-xs hover:underline">Detail Inspeksi</button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-surface-container-lowest transition-colors group">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-slate-500">factory</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold text-on-surface">IndoFood Supply Co.</p>
+                                        <p class="text-[10px] text-on-surface-variant">ID: MBG-2024-042</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="text-sm text-on-surface">Manufaktur Pangan</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="text-sm text-on-surface">Jawa Timur</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold bg-tertiary-fixed text-on-tertiary-fixed-variant">
+                                    Menunggu
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 text-right">
+                                <button class="text-slate-400 font-bold text-xs cursor-not-allowed">Proses
+                                    Verifikasi</button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-surface-container-lowest transition-colors group">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-slate-500">local_shipping</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold text-on-surface">Surya Trans Nusantara</p>
+                                        <p class="text-[10px] text-on-surface-variant">ID: MBG-2024-089</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="text-sm text-on-surface">Transportasi Darat</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="text-sm text-on-surface">Sumatera Utara</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold bg-error-container text-on-error-container">
+                                    Ditolak
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 text-right">
+                                <button class="text-primary font-bold text-xs hover:underline">Re-Submission</button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-surface-container-lowest transition-colors group">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-primary">science</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold text-on-surface">BioLab Analytics</p>
+                                        <p class="text-[10px] text-on-surface-variant">ID: MBG-2024-112</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="text-sm text-on-surface">Uji Kualitas Lab</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="text-sm text-on-surface">DKI Jakarta</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold bg-secondary-container text-on-secondary-container">
+                                    Disetujui
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 text-right">
+                                <button class="text-primary font-bold text-xs hover:underline">Detail Inspeksi</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div
+                    class="px-6 py-4 bg-surface-container-low flex justify-between items-center border-t border-outline-variant/10">
+                    <p class="text-[11px] font-medium text-on-surface-variant italic">Menampilkan 1-4 dari 128 Vendor
+                        Terdaftar</p>
+                    <div class="flex gap-2">
+                        <button
+                            class="p-1.5 rounded bg-white border border-outline-variant/20 text-on-surface-variant hover:bg-surface-container"><span
+                                class="material-symbols-outlined text-[18px]">chevron_left</span></button>
+                        <button
+                            class="p-1.5 rounded bg-white border border-outline-variant/20 text-on-surface-variant hover:bg-surface-container"><span
+                                class="material-symbols-outlined text-[18px]">chevron_right</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Modal Overlay: Apex Corridors Ltd Detail -->
+    <div class="fixed inset-0 z-50 flex items-center justify-center p-6 bg-on-surface/40 backdrop-blur-sm">
+        <div
+            class="bg-surface-container-lowest w-full max-w-4xl max-h-[921px] rounded-2xl shadow-2xl overflow-hidden flex flex-col border border-outline-variant/20">
+            <!-- Modal Header -->
+            <div
+                class="px-8 py-6 border-b border-outline-variant/10 flex justify-between items-start bg-surface-container-low/50">
+                <div class="flex gap-4">
+                    <div
+                        class="w-14 h-14 bg-primary text-white rounded-xl flex items-center justify-center shadow-lg shadow-primary/20">
+                        <span class="material-symbols-outlined text-3xl">verified</span>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-3">
+                            <h2 class="text-2xl font-black text-on-surface tracking-tight">Apex Corridors Ltd</h2>
+                            <span
+                                class="bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase px-2 py-0.5 rounded tracking-widest">Active
+                                License</span>
+                        </div>
+                        <p class="text-on-surface-variant font-medium">Laporan Hasil Inspeksi Lapangan • Q3 2024</p>
+                    </div>
+                </div>
+                <a href="Dashboard.html">
+                    <button class="p-2 hover:bg-surface-container-high rounded-full transition-all">
+                        <span class="material-symbols-outlined text-on-surface-variant">close</span>
+                    </button>
+                </a>
+            </div>
+            <!-- Modal Content -->
+            <div class="flex-1 overflow-y-auto p-8 custom-glass">
+                <!-- Top Metrics -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-primary/5 rounded-xl p-5 border border-primary/10">
+                        <p class="text-[10px] font-black text-primary uppercase tracking-widest mb-1">Compliance Score
+                        </p>
+                        <div class="flex items-end gap-2">
+                            <span class="text-4xl font-black text-primary">94%</span>
+                            <span class="text-secondary text-xs font-bold mb-1.5 flex items-center">
+                                <span class="material-symbols-outlined text-sm">arrow_upward</span> +2.4%
+                            </span>
+                        </div>
+                    </div>
+                    <div class="bg-secondary/5 rounded-xl p-5 border border-secondary/10">
+                        <p class="text-[10px] font-black text-secondary uppercase tracking-widest mb-1">Safety Rating
+                        </p>
+                        <div class="flex items-center gap-1 text-secondary">
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="text-sm font-bold ml-2">Excellent</span>
+                        </div>
+                    </div>
+                    <div class="bg-surface-container-low rounded-xl p-5 border border-outline-variant/10">
+                        <p class="text-[10px] font-black text-on-surface-variant uppercase tracking-widest mb-1">Last
+                            Audit Date</p>
+                        <p class="text-lg font-bold text-on-surface">14 Okt 2024</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Findings Section -->
+                    <div class="space-y-6">
+                        <h4
+                            class="text-sm font-black text-on-surface-variant uppercase tracking-widest flex items-center gap-2">
+                            <span class="w-1 h-4 bg-primary rounded-full"></span>
+                            Inspection Findings
+                        </h4>
+                        <div class="space-y-4">
+                            <div
+                                class="flex gap-4 p-4 rounded-xl bg-surface-container-low/50 hover:bg-white transition-all border border-transparent hover:border-outline-variant/10 group">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shrink-0 shadow-sm group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined">local_shipping</span>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-on-surface">Fleet Maintenance</p>
+                                    <p class="text-xs text-on-surface-variant leading-relaxed">Seluruh armada (42 unit)
+                                        telah tersertifikasi EURO 5. Protokol perawatan berkala dipatuhi secara ketat.
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex gap-4 p-4 rounded-xl bg-surface-container-low/50 hover:bg-white transition-all border border-transparent hover:border-outline-variant/10 group">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shrink-0 shadow-sm group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined">warehouse</span>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-on-surface">Warehouse Operations</p>
+                                    <p class="text-xs text-on-surface-variant leading-relaxed">Sistem pendingin suhu
+                                        (Cold Storage) terkalibrasi. Pencatatan inventaris terintegrasi dengan
+                                        blockchain MBG.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex gap-4 p-4 rounded-xl bg-surface-container-low/50 hover:bg-white transition-all border border-transparent hover:border-outline-variant/10 group">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shrink-0 shadow-sm group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined">description</span>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-on-surface">Administrative Compliance</p>
+                                    <p class="text-xs text-on-surface-variant leading-relaxed">Kelengkapan dokumen
+                                        asuransi dan izin usaha lengkap. Masa berlaku SIPA hingga 2026.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Site Documentation -->
+                    <div class="space-y-6">
+                        <h4
+                            class="text-sm font-black text-on-surface-variant uppercase tracking-widest flex items-center gap-2">
+                            <span class="w-1 h-4 bg-primary rounded-full"></span>
+                            Site Documentation
+                        </h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="group relative rounded-xl overflow-hidden shadow-sm">
+                                <img alt="Logistics warehouse interior"
+                                    class="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-500"
+                                    data-alt="wide shot of a clean modern logistics warehouse with high shelves and organized pallet stacks in soft cool lighting"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMnP3nC4bf2co_HURE37HmCBxW-mSseQZon-ege321XTJtGLJW66xz_f46q0qMQmfek4hbHxSRb7ljzV5d5XY8paS4KBATAgftHFGSCoxreVvhZ-mXVZsxqk8FygQHUoLNkOMteTi8t4YXfm_k_J1p7G6c8KMpTVYAAZ4mkEDpukg0T87jDgCwBOGWRAd-5fdIAZE89RVZk6kN7J9DqIhMRyRkoRmgexn30y-ky6ke-tVspyL59-tQo0EgVZYL0-caljJlegSLWlwV" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <p class="text-[10px] text-white font-medium">Warehouse A-1</p>
+                                </div>
+                            </div>
+                            <div class="group relative rounded-xl overflow-hidden shadow-sm">
+                                <img alt="Fleet monitoring"
+                                    class="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-500"
+                                    data-alt="row of white delivery trucks parked in a perfectly aligned formation at a modern logistics terminal under bright daylight"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqDtFka8HjLToKDD-mnpWwjRJGZLKkBCHgJiky1c2zzd6ojL9wdQpYYhOr9WHtrnTrXw5jatA8Mmwb1gQqjwfgO_7wtNQyXrRiLVB_q-TlP0uG32vYJUz_P7ZMgPtZgmfkMDMk7D94tAxVApkXdHpfg1_r6_5EvJEMvowOQ88-O9V7MnhlbWnerHQgSt7HkSwh7GVZUlaq8Yb6i5WzQIQSAj-RaGYdjs5_wJuNNPh1owkWyR8McYtdojpTcd9j6U9dXBxtnynX7TYJ" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <p class="text-[10px] text-white font-medium">Fleet Cluster</p>
+                                </div>
+                            </div>
+                            <div class="group relative rounded-xl overflow-hidden shadow-sm">
+                                <img alt="Audit session"
+                                    class="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-500"
+                                    data-alt="close-up of hands signing official documents on a clean glass desk with a blurred corporate office background"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgy3FGIJ3tXtzvXith2wMcQYpWIjuvE-gG-2pcPBQotNcuTFiVY46VygBjpl4PFTjFegBj9ZkxB7-thlExPuzKmtm2W70B7GV73iKO6Gfu_sW53zsLr9n34Nn8jXwy7POtr_OmbKlsQoI396kYK8PpxR7pjo7wDSRh1wwIJRNZLcsddCx041moUg-NENpdhKIUUerQSpkX0PfVSRdAsdJuQOuNZM_BKJf5oLcU7YMI3RGiGZJn-y_RmFKD4Z4Pb6_zcq0a00lJn-VS" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <p class="text-[10px] text-white font-medium">Doc Verification</p>
+                                </div>
+                            </div>
+                            <div class="group relative rounded-xl overflow-hidden shadow-sm">
+                                <img alt="Operations room"
+                                    class="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-500"
+                                    data-alt="modern command center with multiple glowing monitors showing logistics maps and data visualizations in a dim tech-style environment"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiDbla-wh4RC3r1aNj3dw0pk-l6Ib7OfuEsKbAudNoXOiqTYN778KunYTqQICgWf7uoYuu65PudKVVCRnI76ZIFr5kfO1WIhd6uqVR7LFlfRxU6a0QmJ5pl4BLmufQe2q0KVJQEe-koRKXAiKE2ZKfWZCtquonBzU4ezyh9E6xzgygNOvW76pB69V8v4dZjOEEORn84q0J5XkZBcu2ToQqv_D85ElBM8TuCz-8D90Te_zEi4GYkdcCDpJshZBz2jefwC5_rRJcwudX" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <p class="text-[10px] text-white font-medium">Ops Control</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full py-3 border-2 border-dashed border-outline-variant/30 rounded-xl text-on-surface-variant font-bold text-xs hover:border-primary/50 hover:text-primary transition-all flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-sm">download</span>
+                            Download Full Audit PDF (14.2 MB)
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Footer -->
+            <div
+                class="px-8 py-5 border-t border-outline-variant/10 flex justify-between items-center bg-surface-container-lowest">
+                <p class="text-[11px] text-on-surface-variant font-medium">Terakhir diperbarui: 24 Menit yang lalu oleh
+                    Admin-Jaka</p>
+                <div class="flex gap-3">
+                    <button
+                        class="px-6 py-2.5 rounded-xl font-bold text-on-surface-variant bg-surface-container-high hover:bg-surface-container-highest transition-all text-sm">Tutup</button>
+                    <button
+                        class="px-6 py-2.5 rounded-xl font-bold text-white bg-primary hover:shadow-lg hover:shadow-primary/20 transition-all text-sm">Cetak
+                        Laporan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

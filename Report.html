@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Pelaporan Sekolah - MBG</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#e6e8ea",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#6ffbbe",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-primary-container": "#c4d2ff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "surface-variant": "#e0e3e5",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary-fixed-variant": "#812800",
+                        "tertiary-fixed-dim": "#ffb59b",
+                        "secondary": "#006c49",
+                        "primary-fixed-dim": "#b2c5ff",
+                        "primary-container": "#0052cc",
+                        "outline": "#737685",
+                        "on-primary-fixed": "#001848",
+                        "primary": "#003d9b",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f2f4f6",
+                        "surface": "#f7f9fb",
+                        "surface-container-highest": "#e0e3e5",
+                        "background": "#f7f9fb",
+                        "on-tertiary-fixed": "#380d00",
+                        "error": "#ba1a1a",
+                        "surface-container": "#eceef0",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#002113",
+                        "on-surface": "#191c1e",
+                        "inverse-primary": "#b2c5ff",
+                        "primary-fixed": "#dae2ff",
+                        "on-primary-fixed-variant": "#0040a2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#ffdbcf",
+                        "tertiary": "#7b2600",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary-container": "#ffc6b2",
+                        "on-surface-variant": "#434654",
+                        "outline-variant": "#c3c6d6",
+                        "secondary-fixed-dim": "#4edea3",
+                        "secondary-container": "#6cf8bb",
+                        "on-background": "#191c1e",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#a33500",
+                        "surface-tint": "#0c56d0",
+                        "on-secondary-container": "#00714d",
+                        "inverse-surface": "#2d3133"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "1rem",
+                        "xl": "1.25rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-headline {
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .glass {
+            backdrop-filter: blur(24px);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface">
+    <!-- Sidebar Navigation -->
+    <aside
+        class="h-screen w-72 fixed left-0 top-0 overflow-y-auto bg-slate-50 border-r border-slate-200/10 z-50 hidden md:block">
+        <div class="flex flex-col gap-2 p-6 h-full">
+            <div class="mb-8">
+                <span class="text-xl font-black text-blue-800 tracking-tight headline">MBG Portal</span>
+                <p class="text-xs font-medium text-slate-500 font-manrope">Sistem Terintegrasi</p>
+            </div>
+            <nav class="flex-1 space-y-1">
+                <a class="flex items-center gap-3 px-4 py-3 bg-white text-blue-700 shadow-sm rounded-lg font-bold transition-transform duration-200 hover:translate-x-1"
+                    href="Dashboard.html">
+                    <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                    <span class="font-manrope text-sm tracking-tight">Dashboard</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-200/50 rounded-lg transition-transform duration-200 hover:translate-x-1"
+                    href="Vendor.html">
+                    <span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+                    <span class="font-manrope text-sm tracking-tight">Perizinan Vendor</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-200/50 rounded-lg transition-transform duration-200 hover:translate-x-1"
+                    href="Monitoring.html">
+                    <span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+                    <span class="font-manrope text-sm tracking-tight">Pemantauan</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-200/50 rounded-lg transition-transform duration-200 hover:translate-x-1"
+                    href="Report.html">
+                    <span class="material-symbols-outlined" data-icon="description">description</span>
+                    <span class="font-manrope text-sm tracking-tight">Laporan</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-200/50 rounded-lg transition-transform duration-200 hover:translate-x-1"
+                    href="#">
+                    <span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                    <span class="font-manrope text-sm tracking-tight">Analitik</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-200/50 rounded-lg transition-transform duration-200 hover:translate-x-1"
+                    href="#">
+                    <span class="material-symbols-outlined" data-icon="hub">hub</span>
+                    <span class="font-manrope text-sm tracking-tight">Log Blockchain</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-200/50 rounded-lg transition-transform duration-200 hover:translate-x-1"
+                    href="Admin.html">
+                    <span class="material-symbols-outlined" data-icon="group">group</span>
+                    <span class="font-manrope text-sm tracking-tight">Admin</span>
+                </a>
+        </div>
+    </aside>
+    <main class="ml-72 min-h-screen">
+        <!-- TopAppBar -->
+        <header
+            class="bg-white/70 backdrop-blur-md sticky top-0 z-40 w-full flex justify-between items-center px-8 py-4 ml-auto shadow-sm shadow-blue-900/5">
+            <div class="flex items-center gap-4">
+                <h2 class="text-lg font-bold bg-gradient-to-br from-blue-700 to-blue-500 bg-clip-text text-transparent">
+                    MBG: Perizinan &amp; Pemantauan</h2>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="flex gap-4">
+                    <button class="p-2 hover:bg-slate-50/50 rounded-full transition-all active:scale-95">
+                        <span class="material-symbols-outlined text-slate-600">notifications</span>
+                    </button>
+                    <button class="p-2 hover:bg-slate-50/50 rounded-full transition-all active:scale-95">
+                        <span class="material-symbols-outlined text-slate-600">settings</span>
+                    </button>
+                </div>
+                <div class="flex items-center gap-3 border-l pl-6 border-slate-200">
+                    <div class="text-right">
+                        <p class="text-sm font-bold text-on-surface">Admin Sekolah</p>
+                        <p class="text-xs text-on-surface-variant">SDN Citra Bakti</p>
+                    </div>
+                    <img alt="Administrator Profile"
+                        class="w-10 h-10 rounded-full object-cover border-2 border-primary/10"
+                        data-alt="professional headshot of a smiling middle-aged man in business attire with a clean grey background"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgAOLRX-B-JSWNP3PZp_8ktEz7Ak_fLWNa9rPpJay19SI3ggunEDEbqyJCKx3psld20k6tFb7i1ESQeO90STCpD5Bud7FXwG7aJTL3YCz5yZmnFjI-gB7b0xSn-v1ri59IPAycLAcfIgm1oJpwWb89_CvG_WOS1NO4KPkktO9-SaW9QA6B5S3EkMOuwbTxxJQsmERpGkslkSfLQbQkRzMxoOjgFWGpLLMZDeyzc6H_pj88M8SXI9AGNCCeOrXMKCnWhZCv6tGAZY1l" />
+                </div>
+            </div>
+        </header>
+        <div class="p-8 max-w-6xl mx-auto">
+            <!-- Header Section -->
+            <div class="mb-10">
+                <h1 class="text-3xl font-extrabold text-on-surface tracking-tight mb-2">Laporan Harian Program Makan
+                    Siang</h1>
+                <p class="text-on-surface-variant max-w-2xl">Pastikan setiap detail pengiriman dan kualitas nutrisi
+                    makanan tercatat secara akurat untuk verifikasi sistem blockchain.</p>
+            </div>
+            <!-- Multi-step Form Container -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Stepper Progress (Sidebar-ish) -->
+                <div class="lg:col-span-3 space-y-4">
+                    <div class="bg-surface-container-low p-6 rounded-xl space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold">
+                                1</div>
+                            <span class="text-sm font-bold text-primary">Konfirmasi Pengiriman</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center text-xs font-bold">
+                                2</div>
+                            <span class="text-sm font-medium text-on-surface-variant">Kualitas &amp; Nutrisi</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center text-xs font-bold">
+                                3</div>
+                            <span class="text-sm font-medium text-on-surface-variant">Ringkasan</span>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-secondary-container/20 rounded-xl">
+                        <h4 class="text-xs font-bold text-on-secondary-container uppercase mb-2 tracking-widest">
+                            Informasi Vendor</h4>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm">
+                                <span class="material-symbols-outlined text-secondary">local_shipping</span>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-on-surface">PT. Nutrisi Sejahtera</p>
+                                <p class="text-xs text-on-surface-variant">ID: VEND-0921-MBG</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Main Form Canvas -->
+                <div class="lg:col-span-9 space-y-8">
+                    <!-- Section 1: Konfirmasi Pengiriman -->
+                    <section class="bg-surface-container-lowest p-8 rounded-xl shadow-sm">
+                        <div class="flex items-center gap-2 mb-8">
+                            <span class="material-symbols-outlined text-primary">pending_actions</span>
+                            <h3 class="text-xl font-bold">Konfirmasi Pengiriman</h3>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-sm font-medium text-on-surface-variant">Waktu Kedatangan</label>
+                                <div class="relative">
+                                    <input
+                                        class="w-full bg-surface-container-low border-none rounded-lg p-3 text-on-surface focus:ring-2 focus:ring-primary/10 transition-all"
+                                        type="time" />
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-medium text-on-surface-variant">Referensi Vendor</label>
+                                <input
+                                    class="w-full bg-surface-container-low border-none rounded-lg p-3 text-on-surface focus:ring-2 focus:ring-primary/10 transition-all"
+                                    placeholder="Contoh: INV/MBG/2023/122" type="text" />
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-medium text-on-surface-variant">Paket Diterima
+                                    (Porsi)</label>
+                                <input
+                                    class="w-full bg-surface-container-low border-none rounded-lg p-3 text-on-surface focus:ring-2 focus:ring-primary/10 transition-all"
+                                    placeholder="0" type="number" />
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-medium text-on-surface-variant">Kondisi Kontainer</label>
+                                <select
+                                    class="w-full bg-surface-container-low border-none rounded-lg p-3 text-on-surface focus:ring-2 focus:ring-primary/10 transition-all">
+                                    <option>Sangat Baik &amp; Tersegel</option>
+                                    <option>Baik</option>
+                                    <option>Ada Kerusakan Ringan</option>
+                                    <option>Segel Rusak (Tolak)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Section 2: Kualitas & Nutrisi -->
+                    <section class="bg-surface-container-lowest p-8 rounded-xl shadow-sm">
+                        <div class="flex items-center gap-2 mb-8">
+                            <span class="material-symbols-outlined text-secondary">restaurant</span>
+                            <h3 class="text-xl font-bold">Kualitas &amp; Nutrisi</h3>
+                        </div>
+                        <div
+                            class="mb-8 p-6 bg-surface-container-low rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+                            <div>
+                                <p class="font-bold text-on-surface">Penilaian Kualitas Keseluruhan</p>
+                                <p class="text-xs text-on-surface-variant">Berdasarkan rasa, aroma, dan penyajian.</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button
+                                    class="w-10 h-10 rounded-full flex items-center justify-center text-amber-400 hover:bg-white transition-all shadow-sm"><span
+                                        class="material-symbols-outlined"
+                                        style="font-variation-settings: 'FILL' 1;">star</span></button>
+                                <button
+                                    class="w-10 h-10 rounded-full flex items-center justify-center text-amber-400 hover:bg-white transition-all shadow-sm"><span
+                                        class="material-symbols-outlined"
+                                        style="font-variation-settings: 'FILL' 1;">star</span></button>
+                                <button
+                                    class="w-10 h-10 rounded-full flex items-center justify-center text-amber-400 hover:bg-white transition-all shadow-sm"><span
+                                        class="material-symbols-outlined"
+                                        style="font-variation-settings: 'FILL' 1;">star</span></button>
+                                <button
+                                    class="w-10 h-10 rounded-full flex items-center justify-center text-amber-400 hover:bg-white transition-all shadow-sm"><span
+                                        class="material-symbols-outlined"
+                                        style="font-variation-settings: 'FILL' 1;">star</span></button>
+                                <button
+                                    class="w-10 h-10 rounded-full flex items-center justify-center text-slate-300 hover:bg-white transition-all shadow-sm"><span
+                                        class="material-symbols-outlined">star</span></button>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                            <div class="space-y-2">
+                                <label
+                                    class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">Kalori
+                                    (kcal)</label>
+                                <div class="flex items-center gap-2 bg-surface-container-low px-3 rounded-lg">
+                                    <input class="w-full bg-transparent border-none py-3 focus:ring-0 text-sm"
+                                        type="number" value="450" />
+                                    <span class="text-xs font-medium text-slate-400">kcal</span>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">Protein
+                                    (g)</label>
+                                <div class="flex items-center gap-2 bg-surface-container-low px-3 rounded-lg">
+                                    <input class="w-full bg-transparent border-none py-3 focus:ring-0 text-sm"
+                                        type="number" value="24" />
+                                    <span class="text-xs font-medium text-slate-400">gr</span>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">Vitamin
+                                    Utama</label>
+                                <input
+                                    class="w-full bg-surface-container-low border-none rounded-lg p-3 text-sm focus:ring-0"
+                                    type="text" value="Vit A, Vit C, Zat Besi" />
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-on-surface-variant">Observasi Tambahan</label>
+                            <textarea
+                                class="w-full bg-surface-container-low border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary/10 transition-all"
+                                placeholder="Catatan mengenai kebersihan personil, keluhan siswa, atau saran perbaikan..."
+                                rows="4"></textarea>
+                        </div>
+                    </section>
+                    <div class="flex justify-between items-center pt-4">
+                        <button
+                            class="px-6 py-3 rounded-lg text-primary font-bold hover:bg-surface-container-low transition-all">Simpan
+                            Draft</button>
+                        <button
+                            class="px-10 py-3 rounded-lg bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold shadow-xl shadow-primary/20 active:scale-95 transition-all">
+                            Kirim Laporan &amp; Verifikasi Blockchain
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Submission History Section -->
+            <div class="mt-16">
+                <div class="flex justify-between items-end mb-6">
+                    <div>
+                        <h3 class="text-2xl font-bold text-on-surface">Riwayat Pengiriman</h3>
+                        <p class="text-on-surface-variant text-sm">7 laporan terakhir yang berhasil diverifikasi.</p>
+                    </div>
+                    <button class="text-sm font-bold text-primary flex items-center gap-1">
+                        Lihat Semua <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+                <div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-surface-container-low">
+                                <th class="p-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">
+                                    Tanggal</th>
+                                <th class="p-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">
+                                    Waktu</th>
+                                <th class="p-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">
+                                    Vendor</th>
+                                <th class="p-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">
+                                    Status</th>
+                                <th
+                                    class="p-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest text-right">
+                                    Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-surface-container-low">
+                            <tr>
+                                <td class="p-4 text-sm font-medium">24 Mei 2024</td>
+                                <td class="p-4 text-sm text-on-surface-variant">10:15 WIB</td>
+                                <td class="p-4">
+                                    <span class="text-sm font-bold">PT. Nutrisi Sejahtera</span>
+                                </td>
+                                <td class="p-4">
+                                    <div
+                                        class="inline-flex items-center gap-1.5 px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold">
+                                        <span class="material-symbols-outlined text-xs">verified</span>
+                                        Tersinkronisasi
+                                    </div>
+                                </td>
+                                <td class="p-4 text-right">
+                                    <button class="p-2 hover:bg-surface-container-low rounded-lg transition-all">
+                                        <span class="material-symbols-outlined text-slate-400">visibility</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 text-sm font-medium">23 Mei 2024</td>
+                                <td class="p-4 text-sm text-on-surface-variant">10:05 WIB</td>
+                                <td class="p-4">
+                                    <span class="text-sm font-bold">PT. Nutrisi Sejahtera</span>
+                                </td>
+                                <td class="p-4">
+                                    <div
+                                        class="inline-flex items-center gap-1.5 px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold">
+                                        <span class="material-symbols-outlined text-xs">verified</span>
+                                        Tersinkronisasi
+                                    </div>
+                                </td>
+                                <td class="p-4 text-right">
+                                    <button class="p-2 hover:bg-surface-container-low rounded-lg transition-all">
+                                        <span class="material-symbols-outlined text-slate-400">visibility</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 text-sm font-medium">22 Mei 2024</td>
+                                <td class="p-4 text-sm text-on-surface-variant">10:30 WIB</td>
+                                <td class="p-4">
+                                    <span class="text-sm font-bold">PT. Nutrisi Sejahtera</span>
+                                </td>
+                                <td class="p-4">
+                                    <div
+                                        class="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-bold">
+                                        <span class="material-symbols-outlined text-xs">sync</span>
+                                        Menunggu Verifikasi
+                                    </div>
+                                </td>
+                                <td class="p-4 text-right">
+                                    <button class="p-2 hover:bg-surface-container-low rounded-lg transition-all">
+                                        <span class="material-symbols-outlined text-slate-400">visibility</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <footer class="mt-20 border-t border-surface-container-high p-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white text-sm">security</span>
+                    </div>
+                    <span class="text-sm font-bold text-on-surface-variant">MBG: Perizinan &amp; Pemantauan
+                        v2.4.0</span>
+                </div>
+                <div class="flex gap-8 text-xs font-medium text-on-surface-variant uppercase tracking-widest">
+                    <a class="hover:text-primary transition-colors" href="#">Kebijakan Privasi</a>
+                    <a class="hover:text-primary transition-colors" href="#">Pusat Bantuan</a>
+                    <a class="hover:text-primary transition-colors" href="#">Kontak Satgas</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>
